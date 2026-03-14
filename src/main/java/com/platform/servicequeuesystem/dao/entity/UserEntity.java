@@ -2,6 +2,8 @@ package com.platform.servicequeuesystem.dao.entity;
 
 import com.platform.servicequeuesystem.model.enums.UserRole;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,9 +14,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
+import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -38,10 +43,13 @@ public class UserEntity {
 
     String password;
 
+    @Enumerated(value = STRING)
     UserRole role;
 
+    @CreationTimestamp
     LocalDateTime createdAt;
 
+    @UpdateTimestamp
     LocalDateTime updatedAt;
 
 
