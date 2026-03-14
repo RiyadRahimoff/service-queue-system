@@ -2,7 +2,12 @@ spring:
   datasource:
     username: root
     password: Lenkeran5566
-    url: jdbc:mysql://localhost:3306/
+    url: jdbc:mysql://localhost:3306/service_queue_system
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
 
   liquibase:
     change-log: classpath:liquibase/changelog-master.yml
