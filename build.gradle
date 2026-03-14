@@ -41,9 +41,8 @@ dependencies {
     //Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    //SQL
+    //SQL & Liquibase
     runtimeOnly 'com.mysql:mysql-connector-j'
-    //Liquibase
     implementation 'org.springframework.boot:spring-boot-starter-liquibase'
 
 }
